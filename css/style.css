@@ -23,7 +23,6 @@ ul, li {
   background-color: #a0bed0;
   position: fixed;
   width: 100%;
-  padding-right: 2%;
   top: 0;
   z-index: 99;
 }
@@ -55,25 +54,11 @@ ul, li {
 }
 
 /* RESPONSIVO */
-
-@media (max-width: 420px) {
-   .nav {
-    background-color: #fff;
-    width: 100%;
-   }
-
-   .menu__mobile {
-     display: block;
-   }
-
-   .nav__menu-item {
-     display: none 
-   }
-
-   .container {
+@media (max-width: 960px) {
+  .container__sobre {
     width: 100%;
     padding-right: 30px;
-  } 
+  }  
 }
 
 @media (max-width: 768px) {
@@ -86,14 +71,25 @@ ul, li {
   }
 
   .nav__menu-item {
-    display: none 
+    display: none;
   }
-
-  .container {
-    width: 100%;
-    padding-right: 30px;
-  }  
 }
+
+@media (max-width: 420px) {
+   .nav {
+    background-color: #fff;
+    width: 100%;
+   }
+
+   .menu__mobile {
+     display: block;
+   }
+
+   .nav__menu-item {
+     display: none; 
+   } 
+}
+
 
 /* HOME */
   
@@ -122,15 +118,25 @@ h2 {
   padding-top: 30px;
 }
 
-@media (max-width: 420px) {
+/* RESPONSIVO HOME */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 80px;
+  }
+  
   h2 {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 420px) {
+  h1 {
+  font-size: 40px;
+}
+
   h2 {
-    font-size: 16px;
+    font-size: 12px;
   }
 }
 
@@ -139,13 +145,17 @@ h2 {
   background-size: cover;
   height: 600PX;
   margin-top: 54px;
+  filter: grayscale(100%);
+  transition: all 1s;
+}
 
+.main-banner:hover {
+  filter: grayscale(0%);
 }
 
 /* BOTÕES  */
 
 btn-grupo {
-  padding-top: 100px;
   text-decoration: none;
 }
 
@@ -155,19 +165,56 @@ btn-grupo {
   text-decoration: none;
   text-transform: uppercase;
   color:#fff;
-  font-size: 80%;
+  font-size: 13px;
   font-family: 'Varela Round';
   display: inline-block;
   letter-spacing: 3px;
   padding: 20px 30px;
-  margin: 6%;
+  margin: 80px;
 }
 
 .btn-primeiro {
   background-color: #829dad;
 }
 
+.btn-primeiro:hover {
+background-color: #36b0e0;
+}
+
+/* RESPONSIVO BOTÕES */
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 420px) {
+  h1 {
+  font-size: 60px;
+}
+
+  h2 {
+    font-size: 14px;
+  }
+
+  .quebra-de-linha {
+    display: none;
+  }
+
+  .btn {
+    padding: 20px 30px;
+    margin: 6%;
+  }
+}
+
+
 /* SOBRE */
+.container__sobre {
+  margin: 0 auto;
+  width: 960px;
+}
+
 .sobre {
   background-color: #212529;
   background-size: cover;
@@ -176,59 +223,186 @@ btn-grupo {
 }
 
 h3 {
- font-size: 22px;
- margin-top: 0;
- padding-top: 50px;
- font-weight: 400;
+  font-size: 22px;
+  margin-top: 0;
+  padding-top: 50px;
+  font-weight: 400;
+  text-align: center;
+  margin: 0 auto;
 }
 
-p {
+.sobre__texto {
   font-size: 16px;
   color: rgba(255,255,255,.5);
   padding-top: 30px;
   font-weight: 500;
-  line-height: 28px;
+  line-height: 23px;
+  letter-spacing: 1px;
 }
 
-@media (max-width: 420px) {
-  p {
-    font-size: 12px;
-  }
+/* RESPONSIVO SOBRE*/
+
+@media (max-width: 960px) {
+  .container__sobre {
+    width: 100%;
+    padding-right: 30px;
+  }  
 }
 
 @media (max-width: 768px) {
-  p {
+  .container__sobre {
+    width: 100%;
+    padding-right: 30px;
+  } 
+
+  .sobre__texto {
     font-size: 14px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .quebra-de-linha {
+    display: none;
   }
 }
 
-/* RESPONSIVO NAVEÇAGÃO E MAIN-MENU*/
-  
-@media (max-width: 768px) {
-  .btn-primeiro {
-    padding: 2%;
-    width: 30%;
+@media (max-width: 420px) {
+  .container__sobre {
+    width: 90%;
+    padding-right: 30px;
+  } 
+
+  .sobre {
+    height: 400px; 
+  }  
+
+  .sobre__texto {
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    margin: 0 auto;
   }
 
-  .principal{
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    display: block;
+  .quebra-de-linha {
+    display: none;
   }
-} 
-  
+}
+
+/* SIBERIA */
+.siberia {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+}
+
+
+.siberia__imagem {
+  width: 50vw;
+  margin-left: 100px;
+  filter: grayscale(100%);
+  transition: all 1s;
+}
+
+.siberia__imagem:hover {
+  filter: grayscale(0%);
+}
+
+.siberia__coluna2 {
+  border-left: 9px solid #829dad;
+}
+
+.siberia__titulo, .siberia__texto   {
+  width: 80%;
+  text-align: left;
+  margin-left: 30px; 
+}
+
+.siberia__titulo {
+  font-size: 22px;
+  font-family: 'Varela Round';
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 2px;
+  color: #353535;
+}
+
+.siberia__texto {
+  color: rgba(0,0,0,.5);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 23px;
+  letter-spacing: 1px;
+  padding: 20px 0;
+}
+
+/* RESPONSIVO SIBERIA*/
+@media (max-width: 960px) {
+  .siberia__titulo, .siberia__texto {
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .siberia {
+    height: 400px;
+    width: 100%;
+  }
+
+  .siberia__coluna2 {
+    border-left: 9px solid #829dad;
+  }
+}
 
 @media (max-width: 420px) {
-  .principal {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
+  .siberia {
     display: block;
   }
 
-  .btn-primeiro {
-    padding: 2%;
-    width: 30%;
+  .siberia__coluna2 {
+    border-left: none;
   }
+
+  .siberia__imagem {
+    width: 80%;
+    margin-left: 0;
+    margin: 30px 0;
+  }
+
+  .siberia__titulo, .siberia__texto   {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
+/* GROENLANDIA E ANTARTIDA */
+.container__groenlandia {
+  margin-left: 100px;
+  display: flex;
+}
+
+.antartida__imagem, .groenlandia__imagem {
+  max-width: 560px;
+  height: 400;
+}
+
+.groenlandia__conteudo {
+  background-color: #000;
+  color: #fff;
+  width: 560px;
+  height: 400;
+}
+
+.container__antartida {
+  margin-left: 100px;
+  display: flex;
+}
+
+.antartida__conteudo {
+  background-color: #000;
+  color: #fff;
+  width: 560px;
+  height: 400;
+  display: flex;
 }
